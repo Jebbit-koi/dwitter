@@ -4,7 +4,7 @@ import 'express-async-errors';
 let tweets = [
     {
         id: '1',
-        text: '코이는 오늘도 귀여워',
+        text: '코이는 오늘도 뚠뚠',
         createdAt: Date.now().toString(),
         name: '코이는귀여워',
         username: 'koi',
