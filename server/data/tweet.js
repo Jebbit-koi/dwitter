@@ -1,20 +1,20 @@
 let tweets = [
     {
-        id: '1',
-        text: '코이는 오늘도 뚠뚠',
-        createdAt: Date.now().toString(),
-        name: '코이는귀여워',
-        username: 'koi',
-        url: 'https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-1.png',
+      id: '1',
+      text: '드림코더분들 화이팅!',
+      createdAt: Date.now().toString(),
+      name: 'Bob',
+      username: 'bob',
+      url: 'https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-1.png',
     },
     {
-        id: '2',
-        text: '서버 재밌다',
-        createdAt: Date.now().toString(),
-        name: '코이언니',
-        username: 'jebbit',
-    }
-];
+      id: '2',
+      text: '안뇽!',
+      createdAt: Date.now().toString(),
+      name: 'Ellie',
+      username: 'ellie',
+    },
+  ];
 
 export async function getAll() {
     return tweets;
