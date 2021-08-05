@@ -27,7 +27,7 @@ export async function signup(req, res) {
 }
 
 export async function login(req, res) {
-    const { username, password } = res.body;
+    const { username, password } = req.body;
     const user = await userRepository.findByUsername(username);
     if (!user) {
         return res.status(401).json({ message: 'Invalid user or password' });
