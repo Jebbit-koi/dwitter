@@ -3,13 +3,18 @@ import { getUsers } from '../database/database.js';
 const ObjectID = MongoDb.ObjectID;
 
 export async function findByUsername(username) {
-  return getUsers().find({ username }).next().then(data => { console.log(data); return data;})
+  return getUsers().find({ username }).next().then(mapOptionalUser);
 }
 
 export async function findById(id) {
-  return getUsers().find({ _id: new ObjectID(id) }).next();
+  return getUsers().find({ _id: new ObjectID(id) }).next()
+  .then(mapOptionalUser);
 }
 
 export async function createUser(user) {
   return getUsers().insertOne(user).then((result) => result.ops[0]._id.toString());
+}
+
+function mapOptionalUser(user) {
+  return user? { ...user, id: user._id.toString() } : user;
 }
