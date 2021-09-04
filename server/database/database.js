@@ -1,15 +1,15 @@
-import MongoDb from 'mongodb';
+import Mongoose from 'mongoose';
 import { config } from '../config.js';
 
-let db;
-export function connectDB() {
-    return MongoDb.MongoClient.connect(config.db.host, {
+export async function connectDB() {
+    return Mongoose.connect(config.db.host, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-    }).then((client) => {
-        db = client.db();
+        useFindAndModify: false,
     });
 }
+
+let db;
 
 export function getUsers() {
     return db.collection('users');
